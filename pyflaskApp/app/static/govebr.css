@@ -1,0 +1,285 @@
+/* ========================================================================= */
+/* --- Variáveis e Fundamentos (Simulação) --- */
+/* ========================================================================= */
+
+:root {
+    /* Cores */
+    --br-base-color: #03529E; /* Azul Primário (Base) */
+    --br-surface-color: #ffffff; /* Fundo */
+    --br-primary-dark: #003666; /* Azul Escuro */
+    --br-gray-20: #E1E6E7; /* Cinza claro para divisores */
+    --br-font-color: #383838; /* Cor do texto principal */
+
+    /* Tipografia (Rawline, se disponível) */
+    --br-font-sans: 'Arial', sans-serif;
+    --br-font-size-default: 1rem; /* 16px */
+    
+    /* Espaçamentos e Medidas */
+    --br-spacing-1x: 0.5rem; /* 8px */
+    --br-spacing-2x: 1rem; /* 16px */
+    --br-spacing-3x: 1.5rem; /* 24px */
+    --br-spacing-4x: 2rem; /* 32px */
+
+    /* Alturas */
+    --br-header-height: 4rem; /* 64px (compacto) */
+}
+
+/* Aplicação de Fundamentos */
+body {
+    font-family: var(--br-font-sans);
+    color: var(--br-font-color);
+    margin: 0;
+    padding: 0;
+    background-color: var(--br-surface-color);
+}
+
+/* ========================================================================= */
+/* --- Estilos do Componente Header --- */
+/* ========================================================================= */
+
+.br-header {
+    background-color: var(--br-surface-color);
+    border-bottom: 0.25rem solid var(--br-base-color); /* Linha azul inferior */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    position: relative;
+}
+
+.br-header .container-lg {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--br-spacing-2x);
+}
+
+/* --- Topo do Header (header-top) --- */
+
+.br-header .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--br-spacing-1x) 0;
+}
+
+/* Logo e Assinatura */
+.br-header .header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.br-header .header-logo img {
+    height: 1.5rem; /* Altura do logo */
+    width: auto;
+    margin-right: var(--br-spacing-1x);
+}
+
+.br-header .header-sign {
+    font-size: 0.875rem; /* 14px */
+    font-weight: 500;
+    color: var(--br-primary-dark);
+}
+
+.br-divider.vertical {
+    height: 1.5rem;
+    width: 1px;
+    background-color: var(--br-gray-20);
+    margin: 0 var(--br-spacing-1x);
+}
+
+/* --- Ações do Header (header-actions) --- */
+
+.br-header .header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.br-header button.br-button {
+    /* Estilo base dos botões circulares */
+    background: none;
+    border: none;
+    color: var(--br-primary-dark);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: var(--br-spacing-1x);
+    border-radius: 50%;
+    transition: background-color 0.15s;
+}
+
+.br-header button.br-button:hover {
+    background-color: rgba(3, 82, 158, 0.1);
+}
+
+.br-header .br-sign-in {
+    /* Estilo do botão Entrar (Login) */
+    background-color: var(--br-base-color);
+    color: var(--br-surface-color);
+    border-radius: 0.25rem;
+    padding: 0.25rem var(--br-spacing-1x);
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+}
+
+.br-header .br-sign-in i {
+    margin-right: 0.25rem;
+}
+
+/* --- Bottom do Header (header-bottom) - Compacto --- */
+
+.br-header .header-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--br-header-height);
+    padding: 0 0 var(--br-spacing-1x) 0;
+}
+
+.br-header .header-menu {
+    display: flex;
+    align-items: center;
+}
+
+.br-header .header-info {
+    margin-left: var(--br-spacing-2x);
+    line-height: 1.2;
+}
+
+.br-header .header-title {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 700;
+    color: var(--br-primary-dark);
+}
+
+.br-header .header-subtitle {
+    font-size: 0.875rem; /* 14px */
+    font-weight: 400;
+    color: var(--br-font-color);
+}
+
+/* --- Ocultar elementos não essenciais para o estilo 'Compacto' --- */
+
+/* No Header Compacto, alguns elementos são ocultados no desktop e só aparecem no mobile (e.g., dropdowns)
+   ou requerem JS para funcionar (search). Este CSS apenas os oculta por simplicidade. */
+.br-header .header-links,
+.br-header .header-functions,
+.br-header .header-search-trigger,
+.br-header .header-search {
+    display: none;
+}
+
+/* Exibir o Menu Trigger para o estilo compacto */
+.br-header .header-menu-trigger {
+    display: block;
+}
+
+.br-header .header-menu-trigger button {
+    color: var(--br-font-color);
+    /* Ajuste o tamanho do botão do menu se necessário */
+}
+
+/* Fim dos estilos simplificados */
+
+
+/* ========================================================================= */
+/* --- Variáveis e Fundamentos (Continuação) --- */
+/* ========================================================================= */
+
+:root {
+    /* Cores do Footer (adicionais ao Header) */
+    --br-footer-background: #003766; /* Azul escuro do gov.br */
+    --br-footer-text-color: #ffffff; /* Texto branco */
+    --br-footer-secondary-background: #002e52; /* Barra inferior um pouco mais escura */
+    --br-footer-arrow-button: #03529E; /* Azul primário para a seta */
+}
+
+/* ========================================================================= */
+/* --- Estilos do Componente Footer --- */
+/* ========================================================================= */
+
+.br-footer {
+    width: 100%;
+    margin-top: var(--br-spacing-4x); /* Espaço acima do rodapé */
+}
+
+/* --- Área Principal (footer-primary) --- */
+
+.br-footer .footer-primary {
+    background-color: var(--br-footer-background);
+    color: var(--br-footer-text-color);
+    padding: var(--br-spacing-4x) 0; /* Padding vertical grande */
+    text-align: center;
+    position: relative;
+}
+
+.br-footer .footer-primary .container-lg {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--br-spacing-2x);
+}
+
+.br-footer .br-logo p {
+    /* Simulação do logo gov.br */
+    font-size: 3rem; /* Tamanho grande para o logo */
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    /* Fazendo a parte ".br" ser um pouco mais clara, como no original */
+    background: linear-gradient(to right, white 0%, white 50%, #E1E6E7 50%, #E1E6E7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    letter-spacing: -2px; /* Ajuste para simular o espaçamento do logo */
+}
+
+/* --- Área Secundária (footer-secondary) --- */
+
+.br-footer .footer-secondary {
+    background-color: var(--br-footer-secondary-background);
+    color: var(--br-footer-text-color);
+    font-size: 0.75rem; /* Fonte pequena */
+}
+
+.br-footer .footer-secondary .container-lg {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--br-spacing-1x) var(--br-spacing-2x);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.br-footer .footer-secondary p {
+    margin: 0;
+}
+
+.br-footer .footer-secondary .license-link {
+    color: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor; /* Sublinhado sutil */
+}
+
+/* --- Botão Voltar ao Topo --- */
+
+.br-footer .back-to-top {
+    /* Estilo do botão seta (Voltar ao Topo) */
+    position: absolute;
+    right: var(--br-spacing-4x); /* Posição à direita do container */
+    bottom: -1rem; /* Desce um pouco para ficar entre as duas seções */
+    background-color: var(--br-footer-arrow-button);
+    border: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--br-footer-text-color);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.br-footer .back-to-top:hover {
+    background-color: var(--br-primary-dark);
+}
