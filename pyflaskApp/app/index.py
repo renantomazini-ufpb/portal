@@ -20,7 +20,7 @@ def error():
 @app.route("/dash")
 def dash():
     if 'username' in session:
-        return render_template("dash.html")
+        return render_template("dash.html", username=session['username'])
     return "<h1>acesso negado</h1>"
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -32,9 +32,9 @@ def login():
             session['username'] = username
             return redirect(url_for('dash'))
         else:
-            return redirect(url_for('/error'))
+            return render_template("error.html", message="Seu login falhou, verifique a senha ou login")
     
-    return redirect(url_for('/error'))
+    return redirect(url_for('error'))
 
 @app.route('/logout')
 def logout():

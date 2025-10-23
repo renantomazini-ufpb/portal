@@ -1,7 +1,26 @@
 {% extends "layout.html"%}
 
 {% block content %}
-
-
-<h1>Acesso negado</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">
+                    <i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Ops! Algo deu errado.
+                </h4>
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                <p>{{ message or "Desculpe, ocorreu um erro inesperado. Tente novamente ou entre em contato conosco se o problema persistir." }}</p>
+                <hr>
+                <p class="mb-0">
+                    <a href="{{ url_for('index') }}" class="btn btn-primary">
+                        <i class="fas fa-home" aria-hidden="true"></i> Voltar à Página Inicial
+                    </a>
+                    <button onclick="history.back()" class="btn btn-secondary ml-2">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i> Tentar Novamente
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

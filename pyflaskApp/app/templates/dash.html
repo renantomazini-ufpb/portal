@@ -1,7 +1,67 @@
-{% extends "layout.html"%}
+{% extends "layout.html" %}
 
 {% block content %}
+<div class="container container-lg">
+    <h2 class="text-center">Você está logado  <!-- Corrigido: 'center' para 'text-center' se quiser centralizar -->
+        <small class="text-body-secondary">{{ username }}, seja bem vindo!</small>
+    </h2>
+<div class="row gx-5">
+    <!-- Card 1: Página Orçamento -->
+    <div class="card col-6">
+        <img src="https://flask.palletsprojects.com/en/stable/_static/flask-logo.svg" class="card-img-top" alt="Logo Flask">
+        <div class="card-body">
+            <h5 class="card-title">Página Orçamento</h5>
+            <p class="card-text">Acesse informações sobre orçamentos e finanças.</p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#orcamento-content" aria-expanded="false" aria-controls="orcamento-content">
+                Ver Detalhes
+            </button>
+        </div>
+        <div class="collapse" id="orcamento-content">
+            <div class="card-body">
+                <h6>Conteúdo da Página Orçamento</h6>
+                <p>Aqui vai o conteúdo dinâmico: gráficos, tabelas ou dados de orçamento. Ex.: Orçamento total: R$ 10.000.</p>
+                <a href="#" class="btn btn-secondary">Editar Orçamento</a>
+            </div>
+        </div>
+    </div>
 
+    <!-- Card 2: Página Pessoas -->
+    <div class="card col-6">
+        <img src="https://flask.palletsprojects.com/en/stable/_static/flask-logo.svg" class="card-img-top" alt="Logo Flask">
+        <div class="card-body">
+            <h5 class="card-title">Página Pessoas</h5>
+            <p class="card-text">Gerencie usuários e perfis.</p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#pessoas-content" aria-expanded="false" aria-controls="pessoas-content">
+                Ver Detalhes
+            </button>
+        </div>
+        <div class="collapse" id="pessoas-content">
+            <div class="card-body">
+                <h6>Conteúdo da Página Pessoas</h6>
+                <p>Lista de usuários: João, Maria, etc. Adicione funcionalidades aqui.</p>
+                <a href="#" class="btn btn-secondary">Adicionar Pessoa</a>
+            </div>
+        </div>
+    </div>
 
-<h1>Você está logado</h1>
+    <!-- Card 3: Página Pesquisas -->
+    <div class="card col-6">
+        <img src="https://flask.palletsprojects.com/en/stable/_static/flask-logo.svg" class="card-img-top" alt="Logo Flask">
+        <div class="card-body">
+            <h5 class="card-title">Página Pesquisas</h5>
+            <p class="card-text">Visualize resultados de pesquisas.</p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#pesquisas-content" aria-expanded="false" aria-controls="pesquisas-content">
+                Ver Detalhes
+            </button>
+        </div>
+        <div class="collapse" id="pesquisas-content">
+            <div class="card-body">
+                <h6>Conteúdo da Página Pesquisas</h6>
+                <p>Dados de pesquisas: 70% aprovaram, etc. Insira gráficos ou tabelas.</p>
+                <a href="#" class="btn btn-secondary">Nova Pesquisa</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
 {% endblock %}
