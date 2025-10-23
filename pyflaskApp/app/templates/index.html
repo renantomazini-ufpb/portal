@@ -8,16 +8,18 @@
             <h5 class="card-title text-center">Login</h5>
             <p class="card-text">Digite seu login e senha.</p>
         </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"> <input type="text" class="form-control" placeholder="login"
-                    aria-label="Username" aria-describedby="basic-addon1"></li>
-            <li class="list-group-item"> <input type="text" class="form-control" placeholder="login" aria-label="Senha"
-                    aria-describedby="basic-addon1"></li>
-        </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-        </div>
+        <form method="post" action="/login">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"> <input name="username" type="text" class="form-control" placeholder="login"
+                        aria-label="Username" aria-describedby="basic-addon1"></li>
+                <li class="list-group-item"> <input type="password" name="password" class="form-control" placeholder="senha" aria-label="Senha"
+                        aria-describedby="basic-addon1"></li>
+            </ul>
+            <div class="card-body">
+                <a href="#" class="card-link">Another link</a>
+                <button type="submit" class="btn btn-primary">LOGAR</button>
+            </div>
+        </form>
     </div>
 </div>
 
